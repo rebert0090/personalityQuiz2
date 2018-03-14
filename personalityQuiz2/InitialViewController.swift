@@ -17,7 +17,7 @@ class InitialViewController: UIViewController {
  
 
     @IBAction func beginButtonPushed(_ sender: UIButton) {
-        performSegue(withIdentifier: "resultsSegue", sender: nil)
+        performSegue(withIdentifier: "initialSegue", sender: nil)
     }
     
 }
