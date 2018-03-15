@@ -136,15 +136,30 @@ class QuestionViewController: UIViewController {
     }
     
     func updateMultipleStack(using answers: [Answer]) {
+        multipleStackSwitch1.isOn = false
+        multipleStackSwitch2.isOn = false
+        multipleStackSwitch3.isOn = false
+        multipleStackSwitch4.isOn = false
+
         multipleStackView.isHidden = false
         multipleStackLabel1.text = answers[0].text
         multipleStackLabel2.text = answers[1].text
         multipleStackLabel3.text = answers[2].text
         multipleStackLabel4.text = answers[3].text
     }
+    
+    @IBAction func rangeAnswerButtonPressed() {
+        let currentAnswers = questions[questionIndex].answers
+        let index = Int(round(rangeStackSlider.value * Float(currentAnswers.count - 1)))
+        answersChosen.append(currentAnswers[index])
+        
+        nextQuestion()
+    }
+    
   
     func updateRangedStack(using answers: [Answer]) {
         rangeStackView.isHidden = false
+        rangeStackSlider.setValue(0.5, animated: false)
         rangeStackLabel1.text = answers.first?.text
         rangeStackLabel2.text = answers.last?.text
     }
@@ -179,6 +194,12 @@ class QuestionViewController: UIViewController {
         nextQuestion()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "resultsSegue" {
+            let resultsViewController = segue.destination as! ResultsViewController
+            resultsViewController.responses = answersChosen
+        }
+    }
 
   
 }

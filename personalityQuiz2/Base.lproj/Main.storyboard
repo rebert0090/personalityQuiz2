@@ -200,13 +200,13 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="2sa-oP-oPb">
-                                <rect key="frame" x="20" y="298.5" width="178" height="70.5"/>
+                                <rect key="frame" x="20" y="273.5" width="335" height="120.5"/>
                                 <subviews>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Vgv-YB-leF">
-                                        <rect key="frame" x="-2" y="0.0" width="182" height="31"/>
+                                        <rect key="frame" x="-2" y="0.0" width="339" height="31"/>
                                     </slider>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="G0h-gd-QJe">
-                                        <rect key="frame" x="0.0" y="50" width="178" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="50" width="335" height="20.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7RF-Q7-ipv">
                                                 <rect key="frame" x="0.0" y="0.0" width="42" height="20.5"/>
@@ -215,13 +215,20 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QBC-3U-PFC">
-                                                <rect key="frame" x="136" y="0.0" width="42" height="20.5"/>
+                                                <rect key="frame" x="293" y="0.0" width="42" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q0c-z9-VwU" userLabel="submit answer">
+                                        <rect key="frame" x="0.0" y="90.5" width="335" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="rangeAnswerButtonPressed" destination="iFq-rb-JXt" eventType="touchUpInside" id="tSc-UP-Kpf"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYE-Ub-Q7z">
@@ -245,6 +252,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="zLX-Zr-tnl" secondAttribute="trailing" id="HKc-FG-dWc"/>
                             <constraint firstItem="ypg-ZC-0N7" firstAttribute="bottom" secondItem="zLX-Zr-tnl" secondAttribute="bottom" constant="20" id="VOJ-lo-yVg"/>
                             <constraint firstItem="2sa-oP-oPb" firstAttribute="leading" secondItem="ypg-ZC-0N7" secondAttribute="leading" constant="20" id="cOI-BR-9BY"/>
+                            <constraint firstItem="ypg-ZC-0N7" firstAttribute="trailing" secondItem="2sa-oP-oPb" secondAttribute="trailing" constant="20" id="lCm-oX-Hex"/>
                             <constraint firstItem="zLX-Zr-tnl" firstAttribute="leading" secondItem="tcO-vz-mbl" secondAttribute="leadingMargin" id="nfd-jb-y9a"/>
                             <constraint firstItem="ypg-ZC-0N7" firstAttribute="trailing" secondItem="FMn-UQ-OjP" secondAttribute="trailing" constant="20" id="qTc-Yv-70p"/>
                             <constraint firstItem="hYE-Ub-Q7z" firstAttribute="top" secondItem="ypg-ZC-0N7" secondAttribute="top" constant="20" id="vtv-21-CzB"/>
@@ -333,6 +341,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zDS-vv-JYX"/>
                     </view>
+                    <connections>
+                        <outlet property="resultsDefLabel" destination="97b-da-seO" id="wuw-tZ-D7H"/>
+                        <outlet property="resultsLabel" destination="Hn6-0Z-aAF" id="qkk-vm-5ym"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uji-BE-rn4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
